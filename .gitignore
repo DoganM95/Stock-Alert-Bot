@@ -1,0 +1,7 @@
+# Node packages
+node_modules
+
+# IDE settings
+.vscode/*
+
+/credentials/tasker_autoremote.json
