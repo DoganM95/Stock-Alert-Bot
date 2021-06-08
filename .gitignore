@@ -5,3 +5,4 @@ node_modules
 .vscode/*
 
 /credentials/tasker_autoremote.json
+/configuration/products_to_watch.json

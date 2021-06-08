@@ -1,0 +1,50 @@
+[
+    {
+        "name": "AMD RYZEN 9 5950X Processor",
+        "url": "https://www.amd.com/de/direct-buy/5450881400/de",
+        "notificationKeywordPairs": [
+            [
+                "out of stock",
+                "out of stock"
+            ],
+            [
+                "in stock",
+                "add to cart"
+            ]
+        ],
+        "checkInterval": 5000,
+        "recoveryTime": 10000
+    },
+    {
+        "name": "AMD RYZEN 9 5900X Processor",
+        "url": "https://www.amd.com/de/direct-buy/5450881500/de",
+        "notificationKeywordPairs": [
+            [
+                "out of stock",
+                "out of stock"
+            ],
+            [
+                "in stock",
+                "add to cart"
+            ]
+        ],
+        "checkInterval": 5000,
+        "recoveryTime": 10000
+    },
+    {
+        "name": "AMD RYZEN 7 5800X Processor",
+        "url": "https://www.amd.com/de/direct-buy/5450881600/de",
+        "notificationKeywordPairs": [
+            [
+                "out of stock",
+                "out of stock"
+            ],
+            [
+                "in stock",
+                "add to cart"
+            ]
+        ],
+        "checkInterval": 5000,
+        "recoveryTime": 10000
+    }
+]
