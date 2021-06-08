@@ -3,7 +3,6 @@ import {
 } from "module";
 const require = createRequire(
     import.meta.url);
-const escape = require("escape-html");
 const axios = require('axios');
 
 const credentials = require("../credentials/tasker_autoremote")
