@@ -1,0 +1,18 @@
+[
+    {
+        "url": "http://192.168.0.7:8080/",
+        "name": "Test Ryzen",
+        "recoveryTime": 10000,
+        "checkInterval": 1000,
+        "notificationKeywordPairs": [
+            [
+                "out of stock",
+                "out of stock"
+            ],
+            [
+                "in stock",
+                "add to cart"
+            ]
+        ]
+    }
+]
