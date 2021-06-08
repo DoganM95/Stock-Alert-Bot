@@ -1,7 +1,8 @@
 {
   "author": "DoganM95",
   "dependencies": {
-    "axios": "^0.21.1"
+    "axios": "^0.21.1",
+    "escape-html": "^1.0.3"
   },
   "description": "watches a given page's in stock / out of stock status",
   "devDependencies": {},
