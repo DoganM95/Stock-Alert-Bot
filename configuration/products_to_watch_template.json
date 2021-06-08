@@ -12,8 +12,8 @@
                 "add to cart"
             ]
         ],
-        "checkInterval": 5000,
-        "recoveryTime": 10000
+        "checkInterval": 1000,
+        "recoveryTime": 60000
     },
     {
         "name": "AMD RYZEN 9 5900X Processor",
@@ -28,8 +28,8 @@
                 "add to cart"
             ]
         ],
-        "checkInterval": 5000,
-        "recoveryTime": 10000
+        "checkInterval": 2000,
+        "recoveryTime": 60000
     },
     {
         "name": "AMD RYZEN 7 5800X Processor",
@@ -44,7 +44,7 @@
                 "add to cart"
             ]
         ],
-        "checkInterval": 5000,
-        "recoveryTime": 10000
+        "checkInterval": 2000,
+        "recoveryTime": 60000
     }
 ]
