@@ -8,7 +8,7 @@ Quick and dirty stock watcher & notifier implementation. Built this just to be a
 #### How it notifies
 The only notification channels are currently
 - The servers logs
-- Tasker (android app) plugin autoRemote which provides a per-user link to send messages using e.g. get-requests or web ui to any registered phone with autoremote installed
+- Tasker (android app) plugin autoRemote which provides a per-user link to send messages using e.g. get-requests or web ui to any registered phone with autoremote installed (/credentials/tasker_autoremote_template.json contains an example).
 
 #### Setup
 - `cd` into /server
