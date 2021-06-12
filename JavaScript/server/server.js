@@ -31,18 +31,13 @@ productsToWatch.forEach(async product => {
 
     setInterval(() => {
         getStock(product, sleep, date, toCollect);
-        global.gc();
-        // console.log("Hi from " + product.name);
-        // axios.get("https://google.com")
-        //     .then(res => {
-        //         product.response = res;
-        //     })
     }, product.checkInterval);
 })
 
 async function getStock(product, sleep, date, toCollect) {
     sleep = false;
     console.log(Date.now() + " - checking: " + product.name)
+
     // Get product status from website
     try {
         toCollect = await axios.get(product.url)
@@ -53,13 +48,14 @@ async function getStock(product, sleep, date, toCollect) {
         console.log("Waiting for an unban: " + product.name);
     }
 
-
+    // sleep for X seconds specified per product, to unban
     if (sleep) {
         console.log(product.name + " bot sleeping " + product.recoveryTime / 1000 + " seconds");
         await sleepFor(product.recoveryTime); // sleep a minute for banned product
         sleep = false;
     }
 
+    // call functions on state change from out of stock to in stock & vice versa
     product.notificationKeywordPairs.forEach(async (keywordPair, keywordIndex, toCollect) => {
         try {
             if (String(product.response.data).toLowerCase().includes(keywordPair[1]) && product.lastNotifiedKeywordIndex != keywordIndex) {
