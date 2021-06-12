@@ -1,4 +1,4 @@
-Quick and dirty stock watcher & notifier implementation. Built this just to be able to buy a gpu before scalpers do.
+Quick and dirty stock watcher & notifier implementation for testing purpouses. Built this just to be able to buy a gpu before scalpers do.
 
 #### How it works
 - sends a get request for each product in an interval specified by the products parameters (/configuration/products_to_watch_template.json contains examples)
@@ -14,3 +14,6 @@ The only notification channels are currently
 - `cd` into /server
 - run `npm install` (installs necessary packages)
 - run `npm run start` to start the server (command can be changed in package.json)
+
+#### Issues
+`JavaScript variant`: JS is single threaded and does not provide any malloc/calloc functions besides the passive garbage collector. Hence infinite loops are suboptimal in javascript, as at some point you will run into memory leakage with no garbage collector being able to free up deprecated memory allocations.
