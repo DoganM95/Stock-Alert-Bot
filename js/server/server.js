@@ -25,53 +25,57 @@ console.log("Tasker AutoRemote destination: " + taskerAutoRemote);
 
 // Starts one stock watchdog for each product, independent of each other
 productsToWatch.forEach(async product => {
-    while (true) {
-        await getStock(product);
-        await sleepFor(product.checkInterval);
-    }
+    let date = new Date();
+    let sleep;
+    let toCollect;
+
+    setInterval(() => {
+        getStock(product, sleep, date, toCollect);
+        global.gc();
+        // console.log("Hi from " + product.name);
+        // axios.get("https://google.com")
+        //     .then(res => {
+        //         product.response = res;
+        //     })
+    }, product.checkInterval);
 })
 
-async function getStock(product) {
-    let sleep = false;
-    console.log(new Date().getTime() + " - checking: " + product.name)
+async function getStock(product, sleep, date, toCollect) {
+    sleep = false;
+    console.log(Date.now() + " - checking: " + product.name)
     // Get product status from website
     try {
-        await axios.get(product.url)
+        toCollect = await axios.get(product.url)
             .then(res => {
                 product.response = res;
             })
-            .catch(err => {
-                console.error("Error on " + product.name + ": " + err.response.status);
-                // console.log("Waiting " + product.recoveryTime + " ms for next check on: " + product.name)
-                // console.log("Current recovery time (until next request is made to undo a ban): " + product.recoveryTime);
-                sleep = true;
-            })
-    } catch (err) {}
+    } catch (err) {
+        console.log("Waiting for an unban: " + product.name);
+    }
+
 
     if (sleep) {
         console.log(product.name + " bot sleeping " + product.recoveryTime / 1000 + " seconds");
         await sleepFor(product.recoveryTime); // sleep a minute for banned product
-        // await sleepFor(product.recoveryTime += 1000);
-        // product.checkInterval += 10;
-        // console.log("Increasing recovery time by 1 second on next failure, until the ban is gone. Currently: " + product.recoveryTime);
-        // console.log("Increasing request interval by 100 ms until no more bans occur. Currently: " + product.checkInterval)
         sleep = false;
     }
 
-    product.notificationKeywordPairs.forEach(async (keywordPair, keywordIndex) => {
+    product.notificationKeywordPairs.forEach(async (keywordPair, keywordIndex, toCollect) => {
         try {
             if (String(product.response.data).toLowerCase().includes(keywordPair[1]) && product.lastNotifiedKeywordIndex != keywordIndex) {
                 product.lastNotifiedKeywordIndex = keywordIndex;
                 // Put any actions/functions to be called on stock status change here
-                await notifyTaskerAutoRemote(product.name + " - " + keywordPair[0]);
+                await notifyTaskerAutoRemote(product.name + " - " + keywordPair[0], toCollect);
             }
-        } catch (err) {}
+        } catch (err) {
+            console.log(err);
+        }
     })
 }
 
-async function notifyTaskerAutoRemote(message) {
+async function notifyTaskerAutoRemote(message, toCollect) {
     message = String(escape(message)).replaceAll(" ", "%20"); // needed, as message is sent as a url-param
-    await axios.get(taskerAutoRemote.url + message);
+    toCollect = await axios.get(taskerAutoRemote.url + message);
     console.log("sent message: " + message)
 }
 
