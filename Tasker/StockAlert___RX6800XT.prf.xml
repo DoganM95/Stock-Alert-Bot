@@ -1,0 +1,320 @@
+<TaskerData sr="" dvi="1" tv="5.12.22">
+    <Profile sr="prof58" ve="2">
+        <cdate>1623452366639</cdate>
+        <clp>true</clp>
+        <edate>1624031831755</edate>
+        <flags>8</flags>
+        <id>58</id>
+        <mid0>59</mid0>
+        <nme>StockAlert - RX6800XT</nme>
+        <Event sr="con0" ve="2">
+            <code>2095</code>
+            <pri>0</pri>
+            <Bundle sr="arg0">
+                <Vals sr="val">
+                    <net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""/&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+                    <net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+                </Vals>
+            </Bundle>
+            <Str sr="arg1" ve="3">2000</Str>
+        </Event>
+    </Profile>
+    <Task sr="task59">
+        <cdate>1623452385400</cdate>
+        <edate>1624031831755</edate>
+        <id>59</id>
+        <nme>StockNotify - RX6800XT</nme>
+        <pri>6</pri>
+        <Action sr="act0" ve="7">
+            <code>547</code>
+            <label>test</label>
+            <on>false</on>
+            <Str sr="arg0" ve="3">%http_data</Str>
+            <Str sr="arg1" ve="3">asdf add to cart xyz</Str>
+            <Int sr="arg2" val="0"/>
+            <Int sr="arg3" val="0"/>
+            <Int sr="arg4" val="0"/>
+            <Int sr="arg5" val="3"/>
+            <Int sr="arg6" val="1"/>
+        </Action>
+        <Action sr="act1" ve="7">
+            <code>547</code>
+            <label>test</label>
+            <on>false</on>
+            <Str sr="arg0" ve="3">%http_data</Str>
+            <Str sr="arg1" ve="3">asdf out of stock xyz</Str>
+            <Int sr="arg2" val="0"/>
+            <Int sr="arg3" val="0"/>
+            <Int sr="arg4" val="0"/>
+            <Int sr="arg5" val="3"/>
+            <Int sr="arg6" val="1"/>
+        </Action>
+        <Action sr="act10" ve="7">
+            <code>547</code>
+            <label>config</label>
+            <Str sr="arg0" ve="3">%Rx6800XtLastState</Str>
+            <Str sr="arg1" ve="3">out of stock</Str>
+            <Int sr="arg2" val="0"/>
+            <Int sr="arg3" val="0"/>
+            <Int sr="arg4" val="0"/>
+            <Int sr="arg5" val="3"/>
+            <Int sr="arg6" val="1"/>
+            <ConditionList sr="if">
+                <Condition sr="c0" ve="3">
+                    <lhs>%match</lhs>
+                    <op>2</op>
+                    <rhs>out of stock</rhs>
+                </Condition>
+            </ConditionList>
+        </Action>
+        <Action sr="act11" ve="7">
+            <code>547</code>
+            <label>config</label>
+            <Str sr="arg0" ve="3">%Rx6800XtLastState</Str>
+            <Str sr="arg1" ve="3">in stock</Str>
+            <Int sr="arg2" val="0"/>
+            <Int sr="arg3" val="0"/>
+            <Int sr="arg4" val="0"/>
+            <Int sr="arg5" val="3"/>
+            <Int sr="arg6" val="1"/>
+            <ConditionList sr="if">
+                <Condition sr="c0" ve="3">
+                    <lhs>%match</lhs>
+                    <op>2</op>
+                    <rhs>in stock</rhs>
+                </Condition>
+            </ConditionList>
+        </Action>
+        <Action sr="act12" ve="7">
+            <code>123</code>
+            <Str sr="arg0" ve="3">date +"%H:%M:%S"</Str>
+            <Int sr="arg1" val="0"/>
+            <Int sr="arg2" val="0"/>
+            <Str sr="arg3" ve="3">%time_sec</Str>
+            <Str sr="arg4" ve="3"/>
+            <Str sr="arg5" ve="3"/>
+        </Action>
+        <Action sr="act13" ve="7">
+            <code>523</code>
+            <Str sr="arg0" ve="3">%product_name - %http_response_code</Str>
+            <Str sr="arg1" ve="3">Last check: %time_sec</Str>
+            <Str sr="arg10" ve="3"/>
+            <Str sr="arg11" ve="3">Silent</Str>
+            <Img sr="arg2" ve="2"/>
+            <Int sr="arg3" val="0"/>
+            <Int sr="arg4" val="0"/>
+            <Int sr="arg5" val="3"/>
+            <Int sr="arg6" val="0"/>
+            <Int sr="arg7" val="0"/>
+            <Int sr="arg8" val="0"/>
+            <Str sr="arg9" ve="3"/>
+            <ListElementItem sr="item0">
+                <label>Open</label>
+                <Action sr="action" ve="7">
+                    <code>104</code>
+                    <Str sr="arg0" ve="3">%product_link</Str>
+                </Action>
+                <Img sr="icon" ve="2">
+                    <nme>mw_editor_attach_money</nme>
+                </Img>
+            </ListElementItem>
+        </Action>
+        <Action sr="act2" ve="7">
+            <code>389</code>
+            <label>config</label>
+            <Bundle sr="arg0">
+                <Vals sr="val">
+                    <net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""/&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+                    <net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+                </Vals>
+            </Bundle>
+            <Str sr="arg1" ve="3">%product_name
+%product_link</Str>
+            <Str sr="arg2" ve="3">
+</Str>
+            <Str sr="arg3" ve="3">AMD RX 6800 XT
+https://www.amd.com/en/direct-buy/5458374100/de</Str>
+            <Str sr="arg4" ve="3"/>
+            <Int sr="arg5" val="0"/>
+            <Int sr="arg6" val="3"/>
+            <Int sr="arg7" val="0"/>
+            <Int sr="arg8" val="1"/>
+        </Action>
+        <Action sr="act3" ve="7">
+            <code>339</code>
+            <se>false</se>
+            <Bundle sr="arg0">
+                <Vals sr="val">
+                    <net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%http_cookies
+Cookies
+The cookies the server sent in the response in the Cookie:COOKIE_VALUE format. You can use this directly in the 'Headers' field of the HTTP Request action&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;%http_data
+Data
+Data that the server responded from the HTTP request.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;%http_file_output
+File Output
+Will always contain the file's full path even if you specified a directory as the File to save.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;%http_response_code
+Response Code
+The HTTP Code the server responded&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;%http_headers()
+Response Headers
+The HTTP Headers the server sent in the response. Each header is in the 'key:value' format&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES5&gt;%http_response_length
+Response Length
+The size of the response in bytes&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES5&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+                    <net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+                </Vals>
+            </Bundle>
+            <Int sr="arg1" val="0"/>
+            <Int sr="arg10" val="0"/>
+            <Int sr="arg11" val="0"/>
+            <Int sr="arg12" val="0"/>
+            <Str sr="arg2" ve="3">%product_link</Str>
+            <Str sr="arg3" ve="3"/>
+            <Str sr="arg4" ve="3"/>
+            <Str sr="arg5" ve="3"/>
+            <Str sr="arg6" ve="3"/>
+            <Str sr="arg7" ve="3"/>
+            <Int sr="arg8" val="30"/>
+            <Int sr="arg9" val="1"/>
+        </Action>
+        <Action sr="act4" ve="7">
+            <code>547</code>
+            <label>config</label>
+            <Str sr="arg0" ve="3">%match</Str>
+            <Str sr="arg1" ve="3">Out of stock</Str>
+            <Int sr="arg2" val="0"/>
+            <Int sr="arg3" val="0"/>
+            <Int sr="arg4" val="0"/>
+            <Int sr="arg5" val="3"/>
+            <Int sr="arg6" val="1"/>
+            <ConditionList sr="if">
+                <Condition sr="c0" ve="3">
+                    <lhs>%http_data</lhs>
+                    <op>2</op>
+                    <rhs>*out of stock*</rhs>
+                </Condition>
+            </ConditionList>
+        </Action>
+        <Action sr="act5" ve="7">
+            <code>547</code>
+            <label>config</label>
+            <Str sr="arg0" ve="3">%match</Str>
+            <Str sr="arg1" ve="3">In stock</Str>
+            <Int sr="arg2" val="0"/>
+            <Int sr="arg3" val="0"/>
+            <Int sr="arg4" val="0"/>
+            <Int sr="arg5" val="3"/>
+            <Int sr="arg6" val="1"/>
+            <ConditionList sr="if">
+                <Condition sr="c0" ve="3">
+                    <lhs>%http_data</lhs>
+                    <op>2</op>
+                    <rhs>*add to cart*</rhs>
+                </Condition>
+            </ConditionList>
+        </Action>
+        <Action sr="act6" ve="7">
+            <code>523</code>
+            <label>test</label>
+            <on>false</on>
+            <Str sr="arg0" ve="3">Match: %match</Str>
+            <Str sr="arg1" ve="3"/>
+            <Str sr="arg10" ve="3"/>
+            <Str sr="arg11" ve="3"/>
+            <Img sr="arg2" ve="2"/>
+            <Int sr="arg3" val="0"/>
+            <Int sr="arg4" val="0"/>
+            <Int sr="arg5" val="3"/>
+            <Int sr="arg6" val="0"/>
+            <Int sr="arg7" val="0"/>
+            <Int sr="arg8" val="0"/>
+            <Str sr="arg9" ve="3"/>
+        </Action>
+        <Action sr="act7" ve="7">
+            <code>523</code>
+            <label>test</label>
+            <on>false</on>
+            <Str sr="arg0" ve="3">Last State: %Rx6800XtLastState</Str>
+            <Str sr="arg1" ve="3"/>
+            <Str sr="arg10" ve="3"/>
+            <Str sr="arg11" ve="3"/>
+            <Img sr="arg2" ve="2"/>
+            <Int sr="arg3" val="0"/>
+            <Int sr="arg4" val="0"/>
+            <Int sr="arg5" val="3"/>
+            <Int sr="arg6" val="0"/>
+            <Int sr="arg7" val="0"/>
+            <Int sr="arg8" val="0"/>
+            <Str sr="arg9" ve="3"/>
+        </Action>
+        <Action sr="act8" ve="7">
+            <code>523</code>
+            <label>config</label>
+            <Str sr="arg0" ve="3">%product_name status - %http_response_code</Str>
+            <Str sr="arg1" ve="3">Out of stock</Str>
+            <Str sr="arg10" ve="3"/>
+            <Str sr="arg11" ve="3">test category</Str>
+            <Img sr="arg2" ve="2">
+                <nme>mw_action_remove_shopping_cart</nme>
+            </Img>
+            <Int sr="arg3" val="0"/>
+            <Int sr="arg4" val="0"/>
+            <Int sr="arg5" val="3"/>
+            <Int sr="arg6" val="0"/>
+            <Int sr="arg7" val="0"/>
+            <Int sr="arg8" val="0"/>
+            <Str sr="arg9" ve="3"/>
+            <ConditionList sr="if">
+                <bool0>And</bool0>
+                <Condition sr="c0" ve="3">
+                    <lhs>%match</lhs>
+                    <op>2</op>
+                    <rhs>out of stock</rhs>
+                </Condition>
+                <Condition sr="c1" ve="3">
+                    <lhs>%Rx6800XtLastState</lhs>
+                    <op>3</op>
+                    <rhs>out of stock</rhs>
+                </Condition>
+            </ConditionList>
+        </Action>
+        <Action sr="act9" ve="7">
+            <code>523</code>
+            <label>config</label>
+            <Str sr="arg0" ve="3">%product_name status - %http_response_code</Str>
+            <Str sr="arg1" ve="3">In stock</Str>
+            <Str sr="arg10" ve="3"/>
+            <Str sr="arg11" ve="3">test category</Str>
+            <Img sr="arg2" ve="2">
+                <nme>mw_action_add_shopping_cart</nme>
+            </Img>
+            <Int sr="arg3" val="0"/>
+            <Int sr="arg4" val="0"/>
+            <Int sr="arg5" val="3"/>
+            <Int sr="arg6" val="0"/>
+            <Int sr="arg7" val="0"/>
+            <Int sr="arg8" val="0"/>
+            <Str sr="arg9" ve="3"/>
+            <ConditionList sr="if">
+                <bool0>And</bool0>
+                <Condition sr="c0" ve="3">
+                    <lhs>%match</lhs>
+                    <op>2</op>
+                    <rhs>in stock</rhs>
+                </Condition>
+                <Condition sr="c1" ve="3">
+                    <lhs>%Rx6800XtLastState</lhs>
+                    <op>3</op>
+                    <rhs>in stock</rhs>
+                </Condition>
+            </ConditionList>
+            <ListElementItem sr="item0">
+                <label>Shop</label>
+                <Action sr="action" ve="7">
+                    <code>104</code>
+                    <Str sr="arg0" ve="3">%product_link</Str>
+                </Action>
+                <Img sr="icon" ve="2">
+                    <nme>mw_editor_attach_money</nme>
+                </Img>
+            </ListElementItem>
+        </Action>
+    </Task>
+</TaskerData>
