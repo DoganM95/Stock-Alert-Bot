@@ -21,7 +21,7 @@ Quick and dirty stock watcher & notifier implementation for testing purpouses. B
   #### Issues
   `JavaScript variant`: JS is single threaded and does not provide any malloc/calloc functions besides the passive garbage collector. Hence infinite loops are suboptimal in          javascript, as at some point you will run into memory leakage with no garbage collector being able to free up deprecated memory allocations.
 
-- `Tasker` (Android automation app)
+- `Tasker`
 
   #### How it works
   - sends a http request for the specified product every X seconds
