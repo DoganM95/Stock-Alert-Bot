@@ -1,7 +1,7 @@
 Quick and dirty stock watcher & notifier implementation for testing purpouses. Built this just to be able to buy a gpu before scalpers do.
 
 # Variants
-- `javascript`
+- ## `javascript`
 
   #### How it works
   - sends a get request for each product in an interval specified by the products parameters (/configuration/products_to_watch_template.json contains examples)
@@ -21,7 +21,7 @@ Quick and dirty stock watcher & notifier implementation for testing purpouses. B
   #### Issues
   `JavaScript variant`: JS is single threaded and does not provide any malloc/calloc functions besides the passive garbage collector. Hence infinite loops are suboptimal in          javascript, as at some point you will run into memory leakage with no garbage collector being able to free up deprecated memory allocations.
 
-- `Tasker`
+- ## `Tasker`
 
   #### How it works
   - sends a http request for the specified product every X seconds
