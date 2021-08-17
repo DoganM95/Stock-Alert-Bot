@@ -16,7 +16,7 @@ Quick and dirty stock watcher & notifier implementation for testing purpouses. B
   #### Setup
   - Import the profile (xml file) in tasker and enable it
 
-- ## `javascript`
+- ## `JavaScript`
 
   #### How it works
   - sends a get request for each product in an interval specified by the products parameters (/configuration/products_to_watch_template.json contains examples)
