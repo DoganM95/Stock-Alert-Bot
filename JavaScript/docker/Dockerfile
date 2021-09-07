@@ -23,4 +23,4 @@ RUN chmod +rwx ./docker/entrypoint.sh
 EXPOSE 3000
 
 # Start the server
-CMD [ "./docker/entrypoint.sh" ]
+CMD [ "node", "./server/server.js" ]
